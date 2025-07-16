@@ -16,9 +16,10 @@ app.use(bodyParser.json());
 // Google Sheets setup
 // ───────────────────────────────────────────────────────────
 const auth = new google.auth.GoogleAuth({
-  keyFile: process.env.GOOGLE_APPLICATION_CREDENTIALS,
+  credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON),
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
+
 
 const SHEET_ID = process.env.SHEET_ID;
 
