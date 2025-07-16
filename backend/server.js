@@ -16,9 +16,10 @@ app.use(bodyParser.json());
 // Google Sheets setup
 // ───────────────────────────────────────────────────────────
 const auth = new google.auth.GoogleAuth({
-  keyFile: "credentials.json",
+  keyFile: process.env.GOOGLE_APPLICATION_CREDENTIALS,
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
+
 const SHEET_ID = process.env.SHEET_ID;
 
 async function addEventToSheet([title, start, end]) {

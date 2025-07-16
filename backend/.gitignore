@@ -1,0 +1,3 @@
+# Prevent secrets from being pushed to Git
+/credentials.json
+.env
